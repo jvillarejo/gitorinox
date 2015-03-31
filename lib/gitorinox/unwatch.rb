@@ -5,8 +5,8 @@ module Gitorinox
     def execute
       unwatched_repositories = []
 
-      github.matched_repository_names(match).each do |repo_name|
-        unwatched_repositories << repo_name if github.unwatch(repo_name)
+      github.matched_repositories(match).each do |repo|
+        unwatched_repositories << repo.name if github.unwatch(repo)
       end
 
       puts "#{unwatched_repositories.size} repositories unwatched"

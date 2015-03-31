@@ -3,7 +3,7 @@ module Gitorinox
     match_option
 
     def execute
-      github.matched_repository_names(match).each { |n| puts n}
+      github.matched_repositories(match).each { |repo| puts repo.name}
     end
   end
 end

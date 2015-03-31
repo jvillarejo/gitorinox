@@ -4,15 +4,15 @@ module Gitorinox
       @client ||= Github.new(login: login, password: password)
     end
 
-    def matched_repository_names(match)
+    def matched_repositories(match)
       result = []
       
       @client.activity.watching.watched.each_page do |page|
         page.each do |repo| 
           if match
-            result << repo.name if repo.name.match(match)
+            result << repo if repo.name.match(match)
           else
-            result << repo.name
+            result << repo
           end
         end
       end
@@ -20,8 +20,8 @@ module Gitorinox
       result
     end 
 
-    def unwatch(repo_name)
-      @client.activity.watching.delete(user: authenticated_username, repo: repo_name)
+    def unwatch(repository)
+      @client.activity.watching.delete(user: repository.owner.login, repo: repository.name)
     end
 
     def authenticated_username
