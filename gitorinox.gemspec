@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["arzivian87@gmail.com"]
   spec.summary       = %q{Your command line tool for github}
   spec.description   = %q{You can list your repositories, and unwatch them}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/jvillarejo/gitorinox"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
 
-  spec.add_dependency 'clamp'
-  spec.add_dependency 'github_api'
+  spec.add_dependency "clamp", "~> 0.6.4"
+  spec.add_dependency 'github_api', "~> 0.12.3"
 end
