@@ -18,6 +18,14 @@ module Gitorinox
       end
 
       result
+    end 
+
+    def unwatch(repo_name)
+      @client.activity.watching.delete(user: authenticated_username, repo: repo_name)
+    end
+
+    def authenticated_username
+      @client.users.get.login
     end
 
   end
