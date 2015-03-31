@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'gitorinox'
+
+gitorinox = Gitorinox::Runner.new  
+
+gitorinox.run

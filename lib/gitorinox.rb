@@ -1,5 +1,5 @@
 require "gitorinox/version"
+require "gitorinox/runner"
 
 module Gitorinox
-  # Your code goes here...
 end
