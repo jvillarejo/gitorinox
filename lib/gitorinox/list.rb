@@ -1,14 +1,10 @@
 module Gitorinox
-  class List < Clamp::Comand
-
-    option ["-l", "--login"], "LOGIN", "Github Login"
-    option ["-p", "--password"], "PASSWORD", "Github Password"
-    option ["-m", "--match"], "MATCH", "Repository Matching Name Expression"
+  class List < Command
 
     def execute
       client = Github.new(login: login, password: password)
 
-      pust client
+      puts client
     end
   end
 end

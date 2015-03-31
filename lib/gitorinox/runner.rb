@@ -1,10 +1,8 @@
+require "gitorinox/command"
+require "gitorinox/list"
+
 module Gitorinox
-  class Runner < Clamp::Comand
-
-    option ["-l", "--login"], "LOGIN", "Github Login"
-    option ["-p", "--password"], "PASSWORD", "Github Password"
-    option ["-m", "--match"], "MATCH", "Repository Matching Name Expression"
-
-    
+  class Runner < Command
+    subcommand 'list', "List your current watching repositories", Gitorinox::List
   end
 end

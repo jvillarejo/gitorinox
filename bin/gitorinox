@@ -2,6 +2,4 @@
 
 require 'gitorinox'
 
-gitorinox = Gitorinox::Runner.new  
-
-gitorinox.run
+Gitorinox::Runner.run
